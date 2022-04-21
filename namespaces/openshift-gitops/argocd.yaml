@@ -10,6 +10,9 @@ spec:
       enabled: true
       tls:
         termination: reencrypt
+  rbac:
+    policy: g, admins, role:admin
+    scopes: '[groups]'
   resourceCustomizations: |
     admissionregistration.k8s.io/MutatingWebhookConfiguration:
       ignoreDifferences: |
