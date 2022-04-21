@@ -14,3 +14,5 @@ spec:
     directory:
       recurse: true
   project: default
+  syncPolicy:
+    automated: {}
