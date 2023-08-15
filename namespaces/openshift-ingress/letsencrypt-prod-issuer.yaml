@@ -16,5 +16,4 @@ spec:
           project: quay-devel
           serviceAccountSecretRef:
             name: clouddns-dns01-solver-svc-acct
-            namespace: openshift-ingress
             key: key.json
