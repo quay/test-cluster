@@ -1,0 +1,20 @@
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: letsencrypt-prod
+  namespace: openshift-ingress
+spec:
+  acme:
+    email: obulatov@redhat.com
+    preferredChain: ""
+    privateKeySecretRef:
+      name: letsencrypt-prod
+    server: https://acme-v02.api.letsencrypt.org/directory
+    solvers:
+    - dns01:
+        cloudDNS:
+          project: quay-devel
+          serviceAccountSecretRef:
+            name: clouddns-dns01-solver-svc-acct
+            namespace: openshift-ingress
+            key: key.json
