@@ -4,7 +4,7 @@ metadata:
   name: router-certs
   namespace: openshift-ingress
 spec:
-  secretName: router-certs
+  secretName: api-certs
   duration: 2160h0m0s # 90d
   renewBefore: 360h0m0s # 15d
   subject:
@@ -23,5 +23,4 @@ spec:
     group: cert-manager.io
   secretTemplate:
     annotations:
-      replicator.v1.mittwald.de/replication-allowed: "true"
-      replicator.v1.mittwald.de/replication-allowed-namespaces: "openshift-config"
+      replicator.v1.mittwald.de/replicate-to: openshift-config
