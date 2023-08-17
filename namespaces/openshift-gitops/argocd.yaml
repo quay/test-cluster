@@ -4,6 +4,9 @@ metadata:
   name: openshift-gitops
   namespace: openshift-gitops
 spec:
+  nodePlacement:
+    nodeSelector:
+      quay-machineset: worker-a
   server:
     host: gitops.apps.test.gcp.quaydev.org
     route:
