@@ -14,6 +14,7 @@ spec:
     helm:
       values: |
         installCRDs: true
+        dns01RecursiveNameservers: 8.8.8.8:53
   project: default
   syncPolicy:
     automated: {}
